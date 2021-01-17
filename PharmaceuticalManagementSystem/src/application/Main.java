@@ -1,5 +1,8 @@
 package application;
 	
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -21,6 +24,17 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
-		launch(args);
+//		launch(args);
+		Connection connection = DBConnector.connect();
+		try {
+			if(connection.isClosed()) {
+				System.out.print("Could not connect");
+			}else {
+				System.out.print("connected");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
