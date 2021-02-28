@@ -59,8 +59,30 @@ public class UserQuery {
 		
 		
 	}
-	public int editUsers() {
-		return 0;
+	public int editUsers(UserModel model) {
+		String q = "UPDATE `user` SET `name`= ?, `password`= ?, `emp_id`= ?, `gender`= ?, `roll`= ?, `status`= ? WHERE `id`= ?";
+		
+		
+		try {
+			PreparedStatement  statement = conn.prepareStatement(q);
+			System.out.print("My id is "+model.getId());
+			statement.setString(1, model.getName());
+			statement.setString(2, model.getPassword());
+			statement.setString(3, model.getEmp_id());
+			statement.setString(4, model.getGender());
+			statement.setString(5, model.getRoll());
+			statement.setString(6, model.getStatus());
+			statement.setInt(7, model.getId());
+			
+			int result = statement.executeUpdate();
+			System.out.println(result);
+			
+			return result;
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			return 0;
+		}
 	}
 	public int deleteUsers() {
 		return 0;
