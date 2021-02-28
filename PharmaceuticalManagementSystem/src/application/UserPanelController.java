@@ -94,10 +94,18 @@ public class UserPanelController implements Initializable{
 		
 	}
 	public void editUser(ActionEvent e) {
-		System.out.print(Integer.parseInt(text_id.getText()));
+//		System.out.print(Integer.parseInt(text_id.getText()));
 		UserModel model = new UserModel(Integer.parseInt(text_id.getText()),text_name.getText(), text_password.getText(),text_emp_id.getText(),text_gender.getText(),text_roll.getText(),text_status.getText());
 		int count = query.editUsers(model);
 		msg.setText(text_name.getText()+" User Updated"+count);
+		refreshTable();
+		
+	}
+	public void deleteUser(ActionEvent e) {
+		int id = table_view.getSelectionModel().getSelectedItem().getId();
+//		System.out.print(id);
+		int count = query.deleteUsers(id);
+		msg.setText(" User Deleted "+count);
 		refreshTable();
 		
 	}

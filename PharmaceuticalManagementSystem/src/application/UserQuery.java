@@ -65,7 +65,7 @@ public class UserQuery {
 		
 		try {
 			PreparedStatement  statement = conn.prepareStatement(q);
-			System.out.print("My id is "+model.getId());
+//			System.out.print("My id is "+model.getId());
 			statement.setString(1, model.getName());
 			statement.setString(2, model.getPassword());
 			statement.setString(3, model.getEmp_id());
@@ -84,8 +84,24 @@ public class UserQuery {
 			return 0;
 		}
 	}
-	public int deleteUsers() {
-		return 0;
+	public int deleteUsers(int id) {
+		String q = "DELETE FROM `user` WHERE `id`= ?";
+		
+		
+		try {
+			PreparedStatement  statement = conn.prepareStatement(q);
+			
+			statement.setInt(1, id);
+			
+			int result = statement.executeUpdate();
+//			System.out.println(result);
+			
+			return result;
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			return 0;
+		}
 	}
 	
 	

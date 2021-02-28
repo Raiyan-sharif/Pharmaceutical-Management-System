@@ -28,7 +28,7 @@
       <Button fx:id="btn_insert" layoutX="42.0" layoutY="275.0" mnemonicParsing="false" onAction="#insertUser" text="Insert" />
       <Button fx:id="btn_edit" layoutX="134.0" layoutY="275.0" mnemonicParsing="false" onAction="#editUser" text="Edit" />
       <Button fx:id="btn_select" layoutX="239.0" layoutY="275.0" mnemonicParsing="false" onAction="#selectUser" text="Select" />
-      <Button fx:id="btn_delete" layoutX="345.0" layoutY="275.0" mnemonicParsing="false" text="Delete" />
+      <Button fx:id="btn_delete" layoutX="345.0" layoutY="275.0" mnemonicParsing="false" onAction="#deleteUser" text="Delete" />
       <Label fx:id="msg" layoutX="556.0" layoutY="280.0" />
       <TextField fx:id="text_password" accessibleRole="PASSWORD_FIELD" layoutX="605.0" layoutY="213.0" promptText="Password" />
       <TextField fx:id="text_id" disable="true" editable="false" layoutX="605.0" layoutY="253.0" promptText="ID" />
