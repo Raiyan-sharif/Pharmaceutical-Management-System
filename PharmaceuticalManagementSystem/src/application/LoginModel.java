@@ -25,6 +25,14 @@ public class LoginModel {
 			
 			resultset = preparedStatement.executeQuery();
 			if(resultset.next()) {
+				UserModel model = new UserModel(resultset.getInt("id"),resultset.getString("name"),resultset.getString("password"), resultset.getString("emp_id"),resultset.getString("gender"),resultset.getString("roll"),resultset.getString("status"));
+				logedInUser.id = model.getId();
+				logedInUser.name = model.getName();
+				logedInUser.emp_id = model.getEmp_id();
+				logedInUser.password = model.getPassword();
+				logedInUser.roll = model.getRoll();
+				logedInUser.gender = model.getGender();
+				logedInUser.status = model.getStatus();
 				return true;
 			}
 			

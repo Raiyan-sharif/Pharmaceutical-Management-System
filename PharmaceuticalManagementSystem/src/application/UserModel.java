@@ -1,6 +1,6 @@
 package application;
 
-public class UserModel {
+public class - {
 	private int id;
 	private String name;
 	private String password;

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SalesPanelController">
+   <children>
+      <TableView fx:id="tableview" layoutX="14.0" layoutY="14.0" prefHeight="242.0" prefWidth="400.0">
+        <columns>
+          <TableColumn fx:id="col_product_id" text="product_id" />
+          <TableColumn fx:id="col_product_name" prefWidth="90.0" text="product_name" />
+            <TableColumn fx:id="col_product_quantity" prefWidth="122.0" text="product_quantity" />
+            <TableColumn fx:id="col_product_price" prefWidth="107.0" text="product_price" />
+        </columns>
+      </TableView>
+      <TextField fx:id="text_product_id" disable="true" editable="false" layoutX="461.0" layoutY="26.0" promptText="Product ID" />
+      <TextField fx:id="text_product_name" layoutX="461.0" layoutY="67.0" promptText="Product Name" />
+      <TextField fx:id="text_product_quantity" layoutX="461.0" layoutY="108.0" promptText="Product  Quantity" />
+      <TextField fx:id="text_total_price" disable="true" editable="false" layoutX="461.0" layoutY="152.0" promptText="Toatal Price" />
+      <TextField fx:id="text_customer_name" layoutX="461.0" layoutY="200.0" promptText="Customer Name" />
+      <TextField fx:id="text_customer_phone" layoutX="461.0" layoutY="243.0" promptText="Customer Phone" />
+      <Button fx:id="btn_place_order" layoutX="185.0" layoutY="302.0" mnemonicParsing="false" onAction="#placeOrder" text="Place Order" />
+      <Button fx:id="btn_select" layoutX="64.0" layoutY="302.0" mnemonicParsing="false" onAction="#selectProduct" text="Select" />
+      <Button layoutX="323.0" layoutY="302.0" mnemonicParsing="false" onAction="#calculate" text="Calculate" />
+      <Button layoutX="450.0" layoutY="302.0" mnemonicParsing="false" onAction="#refreshData" text="Refresh" />
+   </children>
+</AnchorPane>
